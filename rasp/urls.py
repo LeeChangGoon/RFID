@@ -24,7 +24,7 @@ urlpatterns = [
     path('disposal/', views.User_Control.read_tag, name='read_tag'),
     path('add_user/', views.User_Control.add_user),
 #path('disposal/', views.Paint_Control.disposal, name='disposal'),
-    path('result/', views.Paint_Control.result)
-
+    path('result/', views.Paint_Control.result),
+    path('send_weight/', views.publish_weight)
 ]
 

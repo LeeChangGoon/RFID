@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
@@ -10,6 +11,7 @@ from gpiozero import Button
 import spidev
 import RPi.GPIO as GPIO
 import paho.mqtt.client as mqtt
+import paho.mqtt.publish as publish
 spi = spidev.SpiDev()
 spi.open(0, 0)
 spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
@@ -144,20 +146,13 @@ class Paint_Control:
             return render(request, 'error.html', {'message': 'Invalid input data'})
 
 def publish_weight(request):
-        # MQTT 브로커 주소와 포트 설정
-    broker = "10.150.8.62"  # Windows PC의 IP 주소
-    port = 1883  # Mosquitto 기본 포트
+    # 데이터 가져오기
+    data = Weight.objects.all().values()  # 데이터 딕셔너리로 가져옴
+    data_list = list(data)  # 쿼리셋을 리스트로 변환
+    message = json.dumps(data_list)  # JSON 문자열로 변환
 
-    # MQTT 클라이언트 생성
-    client = mqtt.Client()
+    # MQTT 메시지 발행
+    publish.single("test_local/rp165", message, hostname="10.150.8.165")
+    print("데이터 발행:", message)  # 발행된 메시지 출력
 
-    # 클라이언트 연결
-    client.connect(broker, port)
-    weight=Weight.objects.filter()
-    topic = "weight_data"  # 발행할 주제
-    payload = f"Weight: {weight} kg"  # 전송할 메시지
-    client.publish(topic, payload)  # 메시지 발행
-    print(f"Published: {payload}")
-
-    # 연결 종료
-    client.disconnect()
+    return render(request, 'index.html')
