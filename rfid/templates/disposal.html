@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>결과</title>
+    <title>폐기 처리</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,40 +14,40 @@
         }
         h1 {
             color: #006633; /* 초록색 */
-            font-size: 28px;
         }
         p {
             font-size: 18px;
             color: #333333;
         }
-        a {
+        button {
             background-color: #006633; /* 초록색 */
             color: #ffffff; /* 흰색 글씨 */
-            text-decoration: none;
+            border: none;
             padding: 10px 20px;
             font-size: 16px;
-            display: inline-block;
+            cursor: pointer;
             border-radius: 5px;
-            margin-top: 20px;
         }
-        a:hover {
+        button:hover {
             background-color: #004d26; /* 진한 초록색 */
+        }
+        form {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>처리 결과</h1>
-    <p>{{ message }}</p>
-    <p>사용자 이름: {{ name }}</p>
-    <p>소속 회사: {{ company }}</p>
-    <p>폐기량: {{ Weight }}kg</p>
-    <h2>10초 뒤 초기 화면으로 돌아갑니다...</h2>
-    <a href="/">폐기 완료</a>
-    <script>
-        // 10초 후 초기 화면으로 돌아가기
-        setTimeout(function() {
-            window.location.href = "/";
-        }, 10000);
-    </script>
+    <h1>{{ message }}</h1>
+    {% if user %}
+        <p>사용자 이름: {{ user.name }}</p>
+            <p>소속 회사: {{ user.company }}</p>
+    {% endif %}
+    <form action="/result/" method="GET">
+        <input type="hidden" name="name" value="{{ user.name }}">
+        <input type="hidden" name="company" value="{{ user.company }}">
+        <button type="submit">폐기 완료</button>
+    </form>
+    
+    <!-- 추가적인 기능: 폐기량 입력 등 -->
 </body>
 </html>

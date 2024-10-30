@@ -16,12 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import ( handler400, handler403, handler404, handler500)
 from rfid import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('read_tag/', views.read_tag, name='read_tag'),
-    path('add_user/', views.add_user),
+    path('disposal/', views.User_Control.read_tag, name='read_tag'),
+    path('add_user/', views.User_Control.add_user),
+#path('disposal/', views.Paint_Control.disposal, name='disposal'),
+    path('result/', views.Paint_Control.result)
+
 ]
 

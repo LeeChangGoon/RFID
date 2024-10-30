@@ -17,5 +17,5 @@ class Weight(models.Model):
     weight = models.IntegerField()
 
     def __str__(self):
-        return f"{self.company}: {self.weight}kg" # weight_instance = Weight(company="Samsung", weight=123) print(weight_instance) ---> Samsung: 123kg 형식으로 출력되게 만들어줌
+        return f"{self.company}: {self.weight}kg" # weight_instance = Weight(company="abc", weight=123) print(weight_instance) ---> abc: 123kg 형식으로 출력되게 만들어줌
 

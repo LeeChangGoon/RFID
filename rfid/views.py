@@ -1,85 +1,163 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
 from django.shortcuts import render, redirect
 from django.urls import reverse
+import gpiozero
 from mfrc522 import SimpleMFRC522
-import pymysql
-from .models import User
-
+from .models import User, Weight
+from gpiozero import Button
 # Create your views here.
+import spidev
+import RPi.GPIO as GPIO
+import paho.mqtt.client as mqtt
+spi = spidev.SpiDev()
+spi.open(0, 0)
+spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 
 
 def index(request):
     return render(request, 'index.html')
 
-# 사용자 확인 함수 (ORM 사용)
-def check_user(id):
-    try:
-        user = User.objects.get(uid=id)
-        return user
-    except User.DoesNotExist:
-        return None
-
 # RFID 리더기 객체 생성
-reader = SimpleMFRC522()
+
+
+#hx711 객체 생성
+
 
 # 메인 페이지
 def index(request):
     return render(request, 'index.html')
 
+#잠금장치 관리 클래스
+
+
+#사용자 관리 클래스
+class User_Control:
 # RFID 태그 읽기 및 사용자 확인
-def read_tag(request):
-    try:
-        id, data = reader.read()
-        user = check_user(id)
+    def read_tag(request):
+        try:
+            reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
+            id, data = reader.read()  # RFID 태그 읽기
+            user = User_Control.check_user(id)  # UID로 사용자 확인
+            if user:
+                # 확인된 사용자의 이름을 포함한 메시지
+                message = f"사용자 {user.name}이(가) 확인되었습니다."
+                # disposal.html에 사용자 정보와 폐기량 정보 전달
+                return render(request, 'disposal.html', {
+                    'message': message,
+                    'user': user,
+                })
+            else:
+                # 사용자가 확인되지 않은 경우
+                message = f"인가된 사용자가 아닙니다. UID: {id}"
+                return render(request, 'error.html', {'message': '해당 사용자가 없습니다.'})
+        except Exception as e:
+            # 오류 발생 시 에러 페이지로 이동
+            return render(request, 'error.html', {'message': f"태깅 중 에러 발생: {e}"})
 
-        if user:
-            message = f"사용자 {user.name}이(가) 확인되었습니다."
-        else:
-            message = f"사용자가 없습니다. UID: {id}"
+    # 사용자 추가(태깅으로 uid입력)
+    def add_user(request):
+        if request.method == 'POST':
+            # 사용자가 입력한 이름과 회사 정보 받기
+            name = request.POST.get('name')
+            company = request.POST.get('company')
+
+            if name and company:  # 입력 데이터 유효성 검사
+                try:
+                    reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
+                    # RFID 태그 읽기
+                    uid, data = reader.read()
+
+                    # ORM을 사용해 사용자 추가 (uid, name, company 정보 저장)
+                    User.objects.create(uid=uid, name=name, company=company)
+                    
+                    # 저장 후 메인 페이지로 리디렉션
+                    return redirect(reverse('index'))
+                except Exception as e:
+                    # 오류 발생 시 에러 페이지로 이동
+                    return render(request, 'error.html', {'message': f"Error saving data: {e}"})
+            else:
+                return render(request, 'error.html', {'message': 'Invalid input data'})
+
+        return render(request, 'add_user.html')
+    # 사용자 확인 함수 (ORM 사용)
+    def check_user(id):
+        try:
+            user = User.objects.get(uid=id)
+            return user
+        except User.DoesNotExist:
+            return None
         
-        return render(request, 'result.html', {'message': message})
-    except Exception as e:
-        return render(request, 'error.html', {'message': f"Error reading tag: {e}"})
-
-
-#사용자 추가
-# def add_user(request):
-#     if request.method == 'POST':
-#         uid = request.POST.get('uid')
-#         name = request.POST.get('name')
-#         company = request.POST.get('company')
-
-#         if uid and name and company:  # 유효성 검사
-#             try:
-#                 # ORM을 사용해 사용자 추가
-#                 User.objects.create(uid=uid, name=name, company=company)
-#                 return redirect(reverse('index'))
-#             except Exception as e:
-#                 return render(request, 'error.html', {'message': f"Error inserting data: {e}"})
-#         else:
-#             return render(request, 'error.html', {'message': 'Invalid input data'})
-
-# 사용자 추가(태깅으로 uid입력)
-def add_user(request):
-    if request.method == 'POST':
-        # 사용자가 입력한 이름과 회사 정보 받기
-        name = request.POST.get('name')
-        company = request.POST.get('company')
-
-        if name and company:  # 입력 데이터 유효성 검사
+#폐기량 관리 클래스
+class Paint_Control:
+    
+    # 무게값 업데이트 함수
+    def update_weight(company, name):        
+        if company:
             try:
-                # RFID 태그 읽기
-                uid, data = reader.read()
+                # 해당 회사의 현재 상태를 가져옴
+                cur_state = Weight.objects.get(company=company)
 
-                # ORM을 사용해 사용자 추가 (uid, name, company 정보 저장)
-                User.objects.create(uid=uid, name=name, company=company)
-                
-                # 저장 후 메인 페이지로 리디렉션
-                return redirect(reverse('index'))
+                # HX711에서 읽어온 무게 (부은 후의 변화된 무게) -> new_weight
+                new_weight = 123  # 모듈에서 실제 값을 읽어오는 코드가 들어갈 예정
+
+                # 폐기량 측정
+                disposal_weight = new_weight - cur_state.weight
+
+                # 현재 무게 업데이트
+                cur_state.weight = new_weight
+                cur_state.save()
+
+                # Message와 폐기량을 함께 반환
+                message = f"{company}의 폐기량은 {disposal_weight}kg입니다."
+                return {'message': message, 'disposal_weight': disposal_weight}
+
+            except Weight.DoesNotExist:
+                return {'error': "무게 정보가 없습니다.", 'status': 404}
             except Exception as e:
-                # 오류 발생 시 에러 페이지로 이동
-                return render(request, 'error.html', {'message': f"Error saving data: {e}"})
+                return {'error': f"오류가 발생했습니다: {str(e)}", 'status': 500}
+        else:
+            return {'error': "회사명이 입력되지 않았습니다.", 'status': 400}
+
+
+            
+
+    # 폐기 후 결과 화면
+    def result(request):
+        if request.method == 'GET':
+            name = request.GET.get('name')
+            company = request.GET.get('company')
+            weight_info = Paint_Control.update_weight(company, name)
+
+            if 'error' in weight_info:
+                # 오류 메시지와 상태 코드를 반환
+                return HttpResponse(weight_info['error'], status=weight_info['status'])
+
+            # 성공적으로 폐기량을 계산한 경우
+            return render(request, 'result.html', {
+                'name': name,
+                'company': company,
+                'message': weight_info['message'],
+                'Weight': weight_info['disposal_weight']
+            })
         else:
             return render(request, 'error.html', {'message': 'Invalid input data'})
 
-    return render(request, 'add_user.html')
+def publish_weight(request):
+        # MQTT 브로커 주소와 포트 설정
+    broker = "10.150.8.62"  # Windows PC의 IP 주소
+    port = 1883  # Mosquitto 기본 포트
+
+    # MQTT 클라이언트 생성
+    client = mqtt.Client()
+
+    # 클라이언트 연결
+    client.connect(broker, port)
+    weight=Weight.objects.filter()
+    topic = "weight_data"  # 발행할 주제
+    payload = f"Weight: {weight} kg"  # 전송할 메시지
+    client.publish(topic, payload)  # 메시지 발행
+    print(f"Published: {payload}")
+
+    # 연결 종료
+    client.disconnect()

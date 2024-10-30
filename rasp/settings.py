@@ -24,9 +24,55 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'rfid/templates') #템플릿파일 경로
 SECRET_KEY = 'django-insecure-2l$r1=pr99hu^(#d12)gqe^ts52ed0c%zleuy=a#32cnllw3(7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters':{
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log'),
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'WARNING.log'),
+            'formatter': 'verbose',
+        },
+    'console':{
+        'level': 'DEBUG',
+        'class': 'logging.StreamHandler',
+        'formatter': 'simple',
+        },
+    },
+    'loggers':{
+        # 'django': {
+        #     'handlers': ['file', 'console'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+        'myapp': {
+            'handlers': ['file', 'console'],
+            'level': 'ERROR',
+            'propagte': False
+        },
+    },
+}
 
 #APPEND_SLASH = False
 
