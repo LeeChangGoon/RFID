@@ -7,6 +7,7 @@ import gpiozero
 from mfrc522 import SimpleMFRC522
 from .models import User, Weight
 from gpiozero import Button
+from gpiozero import DigitalOutputDevice
 # Create your views here.
 import spidev
 import RPi.GPIO as GPIO
@@ -55,6 +56,8 @@ class User_Control:
                 return render(request, 'error.html', {'message': '해당 사용자가 없습니다.'})
         except Exception as e:
             # 오류 발생 시 에러 페이지로 이동
+            print(e)
+            DigitalOutputDevice(16).off()
             return render(request, 'error.html', {'message': f"태깅 중 에러 발생: {e}"})
 
     # 사용자 추가(태깅으로 uid입력)
@@ -145,11 +148,13 @@ class Paint_Control:
         else:
             return render(request, 'error.html', {'message': 'Invalid input data'})
 
+# MQTT 테이블 정보 전송
 def publish_weight(request):
     # 데이터 가져오기
     data = Weight.objects.all().values()  # 데이터 딕셔너리로 가져옴
+    print(data)
     data_list = list(data)  # 쿼리셋을 리스트로 변환
-    message = json.dumps(data_list)  # JSON 문자열로 변환
+    message = json.dumps(data_list, ensure_ascii=False)  # JSON 문자열로 변환, 두번째 옵션은 한글 처리.0
 
     # MQTT 메시지 발행
     publish.single("test_local/rp165", message, hostname="10.150.8.165")

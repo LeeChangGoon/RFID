@@ -42,13 +42,13 @@ LOGGING = {
         },
     },
     'handlers': {
-        'file': {
+        'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR, 'error.log'),
             'formatter': 'verbose',
         },
-        'file': {
+        'warning_file': {
             'level': 'WARNING',
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR, 'WARNING.log'),
@@ -67,9 +67,9 @@ LOGGING = {
         #     'propagate': True,
         # },
         'myapp': {
-            'handlers': ['file', 'console'],
+            'handlers': ['error_file', 'warning_file', 'console'],
             'level': 'ERROR',
-            'propagte': False
+            'propagate': False
         },
     },
 }
