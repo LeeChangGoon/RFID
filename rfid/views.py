@@ -21,14 +21,14 @@ spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 def index(request):
     return render(request, 'index.html')
 
-# RFID 리더기 객체 생성
-
-
 #hx711 객체 생성
 
+#led
+led_blue = DigitalOutputDevice(21, active_high=True)
 
 # 메인 페이지
 def index(request):
+    led_blue.off()
     return render(request, 'index.html')
 
 #잠금장치 관리 클래스
@@ -45,6 +45,7 @@ class User_Control:
             if user:
                 # 확인된 사용자의 이름을 포함한 메시지
                 message = f"사용자 {user.name}이(가) 확인되었습니다."
+                led_blue.on()
                 # disposal.html에 사용자 정보와 폐기량 정보 전달
                 return render(request, 'disposal.html', {
                     'message': message,
@@ -95,7 +96,6 @@ class User_Control:
         
 #폐기량 관리 클래스
 class Paint_Control:
-    
     # 무게값 업데이트 함수
     def update_weight(company, name):        
         if company:
@@ -154,10 +154,10 @@ def publish_weight(request):
     data = Weight.objects.all().values()  # 데이터 딕셔너리로 가져옴
     print(data)
     data_list = list(data)  # 쿼리셋을 리스트로 변환
-    message = json.dumps(data_list, ensure_ascii=False)  # JSON 문자열로 변환, 두번째 옵션은 한글 처리.0
+    message = json.dumps(data_list, ensure_ascii=False)  # JSON 문자열로 변환, 두번째 옵션은 한글 처리.
 
     # MQTT 메시지 발행
     publish.single("test_local/rp165", message, hostname="10.150.8.165")
-    print("데이터 발행:", message)  # 발행된 메시지 출력
+    print("데이터 발행:", message)
 
     return render(request, 'index.html')
