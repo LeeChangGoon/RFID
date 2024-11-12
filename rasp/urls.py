@@ -23,6 +23,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('disposal/', views.User_Control.read_tag, name='read_tag'),
     path('add_user/', views.User_Control.add_user),
+    path('add_card/', views.User_Control.add_card),
 #path('disposal/', views.Paint_Control.disposal, name='disposal'),
     path('result/', views.Paint_Control.result),
     path('send_weight/', views.publish_weight)

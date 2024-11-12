@@ -22,16 +22,16 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'rfid/templates') #템플릿파일 경로
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-2l$r1=pr99hu^(#d12)gqe^ts52ed0c%zleuy=a#32cnllw3(7'
-
+ADMIN_PASSWD = 'qwer123'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'formatters':{
+    'formatters': {
         'verbose': {
             'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
@@ -63,11 +63,12 @@ LOGGING = {
     'loggers': {
         'myapp': {
             'handlers': ['error_file', 'warning_file', 'console'],
-            'level': 'ERROR',
+            'level': 'DEBUG',  # 로그 레벨을 DEBUG로 설정하여 모든 로그 출력
             'propagate': False
         },
     },
 }
+
 
 
 #APPEND_SLASH = False

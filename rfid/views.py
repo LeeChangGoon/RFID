@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 import gpiozero
 from mfrc522 import SimpleMFRC522
+
+from rasp import settings
 from .models import User, Weight
 from gpiozero import Button
 from gpiozero import DigitalOutputDevice
@@ -16,7 +18,6 @@ import paho.mqtt.publish as publish
 spi = spidev.SpiDev()
 spi.open(0, 0)
 spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
-
 
 def index(request):
     return render(request, 'index.html')
@@ -32,6 +33,7 @@ def index(request):
 #잠금장치 관리 클래스
 
 
+
 #사용자 관리 클래스
 class User_Control:
 # RFID 태그 읽기 및 사용자 확인
@@ -44,8 +46,7 @@ class User_Control:
                 # 확인된 사용자의 이름을 포함한 메시지
                 message = f"사용자 {user.name}이(가) 확인되었습니다."
                 led_blue.on() # gpio 핀 high/low 테스트용
-                # disposal.html에 사용자 정보와 폐기량 정보 전달
-                return render(request, 'disposal.html', {
+                return render(request, 'disposal.html', {# disposal.html에 사용자 정보와 폐기량 정보 전달
                     'message': message,
                     'user': user,
                 })
@@ -65,7 +66,11 @@ class User_Control:
             # 사용자가 입력한 이름과 회사 정보 받기
             name = request.POST.get('name')
             company = request.POST.get('company')
-
+            admin_pw = request.POST.get('admin_pw')
+            # 관리자 비밀번호 검증
+            if admin_pw != settings.ADMIN_PASSWD:
+                return render(request, 'error.html', {'message': '잘못된 관리자 비밀번호입니다.'})
+            
             if name and company:  # 입력 데이터 유효성 검사
                 try:
                     reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
@@ -73,8 +78,13 @@ class User_Control:
                     uid, data = reader.read()
 
                     # ORM을 사용해 사용자 추가 (uid, name, company 정보 저장)
-                    User.objects.create(uid=uid, name=name, company=company)
-                    
+                    if User.objects.filter(uid=uid).exists():
+                        return render(request, 'error.html', {'message': '사용자가 이미 존재합니다.'})
+                    else: 
+                        User.objects.create(uid=uid, name=name, company=company)
+                        # 회사가 중복되지 않으면 초기 무게 데이터 생성
+                        if not Weight.objects.filter(company=company).exists():
+                            Weight.objects.create(company=company, weight=0)
                     # 저장 후 메인 페이지로 리디렉션
                     return redirect(reverse('index'))
                 except Exception as e:
@@ -82,8 +92,8 @@ class User_Control:
                     return render(request, 'error.html', {'message': f"Error saving data: {e}"})
             else:
                 return render(request, 'error.html', {'message': 'Invalid input data'})
-
         return render(request, 'add_user.html')
+    
     # 사용자 확인 함수 (ORM 사용)
     def check_user(id):
         try:
@@ -91,7 +101,10 @@ class User_Control:
             return user
         except User.DoesNotExist:
             return None
-        
+    #카드 추가 페이지 렌더링
+    def add_card(request):
+        return render(request, 'add_user.html')   
+     
 #폐기량 관리 클래스
 class Paint_Control:
     # 무게값 업데이트 함수
@@ -101,11 +114,8 @@ class Paint_Control:
                 # 해당 회사의 현재 상태를 가져옴(id | company | weight)
                 cur_state = Weight.objects.get(company=company)
 
-                # 로드셀에서 읽어온 무게 (부은 후의 변화된 무게) -> new_weight
+                # 로드셀에서 읽어온 무게 (부은 후의 변화된 무게) -> disposal_weight
                 disposal_weight = 123  # 모듈에서 실제 값을 읽어오는 코드가 들어갈 예정
-
-                # 폐기량 측정
-                # disposal_weight = new_weight - cur_state.weight
 
                 #회사 폐기량
                 company_disposal = disposal_weight+cur_state.weight
@@ -133,7 +143,7 @@ class Paint_Control:
 
             if 'error' in weight_info:
                 # 오류 메시지와 상태 코드를 반환
-                return render(request, 'error.html', {'message' : "무게 정보 업데이트 중 오류 발생"})
+                return render(request, 'error.html', {'message' : weight_info})
             # 성공적으로 폐기량을 계산한 경우
             else: 
                 return render(request, 'result.html', {
@@ -146,7 +156,7 @@ class Paint_Control:
         else:
             return render(request, 'error.html', {'message': 'Invalid input data'})
 
-# MQTT 테이블 정보 전송
+# MQTT 테이블 정보 전송 (테스트용)
 def publish_weight(request):
     # 데이터 가져오기
     data = Weight.objects.all().values()  # 데이터 딕셔너리로 가져옴

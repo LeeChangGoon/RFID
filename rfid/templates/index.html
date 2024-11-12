@@ -90,19 +90,15 @@
             }
         </script>
 
-        <h2>사용자 추가</h2>
-        <!-- 사용자 추가 양식 -->
-        <form action="/add_user/" method="POST">
-            <input type="text" name="name" placeholder="이름 입력" required><br>
-            <input type="text" name="company" placeholder="회사 입력" required><br>
+        <h2>RF카드 추가</h2>
+        <form action="/add_card/" method="GET">
             <button type="submit">사용자 추가</button>
         </form>
 
         <h2>무게 데이터 전송</h2>
-        <!-- 무게 데이터 전송 양식 -->
         <form action="/send_weight/" method="POST">
             <button type="submit">무게 데이터 전송</button>
-        </form>        
+        </form>
     </div>
 
 </body>
