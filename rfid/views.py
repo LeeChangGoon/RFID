@@ -21,8 +21,6 @@ spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 def index(request):
     return render(request, 'index.html')
 
-#hx711 객체 생성
-
 #led
 led_blue = DigitalOutputDevice(21, active_high=True)
 
@@ -40,12 +38,12 @@ class User_Control:
     def read_tag(request):
         try:
             reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
-            id, data = reader.read()  # RFID 태그 읽기
+            id, data = reader.read() # RFID 태그 읽기
             user = User_Control.check_user(id)  # UID로 사용자 확인
             if user:
                 # 확인된 사용자의 이름을 포함한 메시지
                 message = f"사용자 {user.name}이(가) 확인되었습니다."
-                led_blue.on()
+                led_blue.on() # gpio 핀 high/low 테스트용
                 # disposal.html에 사용자 정보와 폐기량 정보 전달
                 return render(request, 'disposal.html', {
                     'message': message,
@@ -100,22 +98,24 @@ class Paint_Control:
     def update_weight(company, name):        
         if company:
             try:
-                # 해당 회사의 현재 상태를 가져옴
+                # 해당 회사의 현재 상태를 가져옴(id | company | weight)
                 cur_state = Weight.objects.get(company=company)
 
-                # HX711에서 읽어온 무게 (부은 후의 변화된 무게) -> new_weight
-                new_weight = 123  # 모듈에서 실제 값을 읽어오는 코드가 들어갈 예정
+                # 로드셀에서 읽어온 무게 (부은 후의 변화된 무게) -> new_weight
+                disposal_weight = 123  # 모듈에서 실제 값을 읽어오는 코드가 들어갈 예정
 
                 # 폐기량 측정
-                disposal_weight = new_weight - cur_state.weight
+                # disposal_weight = new_weight - cur_state.weight
 
+                #회사 폐기량
+                company_disposal = disposal_weight+cur_state.weight
                 # 현재 무게 업데이트
-                cur_state.weight = new_weight
+                cur_state.weight = company_disposal
                 cur_state.save()
 
                 # Message와 폐기량을 함께 반환
-                message = f"{company}의 폐기량은 {disposal_weight}kg입니다."
-                return {'message': message, 'disposal_weight': disposal_weight}
+                message = f"{name}님의 폐기량은 {disposal_weight}kg입니다."
+                return {'message': message, 'disposal_weight': disposal_weight, 'company_weight': company_disposal}
 
             except Weight.DoesNotExist:
                 return {'error': "무게 정보가 없습니다.", 'status': 404}
@@ -123,9 +123,6 @@ class Paint_Control:
                 return {'error': f"오류가 발생했습니다: {str(e)}", 'status': 500}
         else:
             return {'error': "회사명이 입력되지 않았습니다.", 'status': 400}
-
-
-            
 
     # 폐기 후 결과 화면
     def result(request):
@@ -136,14 +133,15 @@ class Paint_Control:
 
             if 'error' in weight_info:
                 # 오류 메시지와 상태 코드를 반환
-                return HttpResponse(weight_info['error'], status=weight_info['status'])
-
+                return render(request, 'error.html', {'message' : "무게 정보 업데이트 중 오류 발생"})
             # 성공적으로 폐기량을 계산한 경우
-            return render(request, 'result.html', {
+            else: 
+                return render(request, 'result.html', {
                 'name': name,
                 'company': company,
                 'message': weight_info['message'],
-                'Weight': weight_info['disposal_weight']
+                'Weight': weight_info['disposal_weight'],
+                'Company_Weight' : weight_info['company_weight']
             })
         else:
             return render(request, 'error.html', {'message': 'Invalid input data'})

@@ -54,18 +54,13 @@ LOGGING = {
             'filename': os.path.join(BASE_DIR, 'WARNING.log'),
             'formatter': 'verbose',
         },
-    'console':{
-        'level': 'DEBUG',
-        'class': 'logging.StreamHandler',
-        'formatter': 'simple',
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
         },
     },
-    'loggers':{
-        # 'django': {
-        #     'handlers': ['file', 'console'],
-        #     'level': 'DEBUG',
-        #     'propagate': True,
-        # },
+    'loggers': {
         'myapp': {
             'handlers': ['error_file', 'warning_file', 'console'],
             'level': 'ERROR',
@@ -73,6 +68,7 @@ LOGGING = {
         },
     },
 }
+
 
 #APPEND_SLASH = False
 

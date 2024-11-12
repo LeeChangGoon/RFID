@@ -81,9 +81,14 @@
     <div class="container">
         <h1>RFID 태그 작업</h1>
         <!-- 태그 읽기 버튼 -->
-        <form action="/disposal/" method="POST">
-            <button type="submit">태그 읽기</button>
+        <form action="/disposal/" method="POST" onsubmit="hideButton()">
+            <button type="submit" id="readTagButton">태그 읽기</button>
         </form>
+        <script>
+            function hideButton() {
+                document.getElementById('readTagButton').style.display = 'none';
+            }
+        </script>
 
         <h2>사용자 추가</h2>
         <!-- 사용자 추가 양식 -->
