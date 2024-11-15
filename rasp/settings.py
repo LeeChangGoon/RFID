@@ -35,7 +35,7 @@ ADMIN_PASSWD = 'qwer123'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'raspberrypi.local', '10.150.8.165']  # 예시
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'raspberrypi.local', '10.150.8.165', '10.150.190.54']
 
 
 LOGGING = {

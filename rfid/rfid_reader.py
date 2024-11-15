@@ -17,7 +17,7 @@ import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 spi = spidev.SpiDev()
 spi.open(0, 0)
-spi.max_speed_hz = 10000  # SPI 속도를 50kHz로 낮춤
+spi.max_speed_hz = 100000  # SPI 속도를 0kHz로 낮춤
 # Create your tests here.
 import logging
 

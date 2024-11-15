@@ -1,31 +1,26 @@
 import json
 import logging
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
-from django.shortcuts import render, redirect
-from django.urls import reverse
-import gpiozero
-from mfrc522 import SimpleMFRC522
-from numpy import double
-from rasp import settings
-from rfid.exceptions import CustomException
-from rfid.utils import handle_exception
-from .models import User, Weight
-from gpiozero import DigitalOutputDevice
-import spidev
-import paho.mqtt.client as mqtt
-import paho.mqtt.publish as publish
-
+import re
 import serial
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from rfid.exceptions import CustomException
+from .models import Weight
+
+# 로깅 설정
 logger = logging.getLogger('rasp')
-logger.info("로깅 시작")
+logger.setLevel(logging.INFO)
 
 PORT = "/dev/serial0"  # 시리얼 포트 설정
 BAUDRATE = 9600        # 통신 속도
 TIMEOUT = 1            # 읽기 타임아웃(초)
 
+# 무게 값을 추출할 정규식 패턴 (예시: 무게 값이 "0.0 kg" 형식일 경우)
+WEIGHT_PATTERN = r"(\d+\.\d{1,2}) kg"  # 소수점 이하 최대 두 자리까지
+
 def get_weight():  # 측정값 5개 받고 평균내서 리턴
     try:
+        # 시리얼 포트 초기화
         ser = serial.Serial(
             port=PORT,
             baudrate=BAUDRATE,
@@ -35,44 +30,47 @@ def get_weight():  # 측정값 5개 받고 평균내서 리턴
             timeout=TIMEOUT,
             rtscts=False, xonxoff=False
         )
-        print("저울과 통신 시작")
+        logger.info("저울과 통신 시작")
 
         total_weight = 0
         count = 0
 
         for _ in range(5):
             if ser.in_waiting > 0:
-                data = ser.readline()
-                try:
-                    decoded_data = data.decode('utf-8', errors='ignore').strip()
-                    parts = decoded_data.split(',')
-                    if len(parts) == 4:  # 데이터 포맷 확인
-                        print(f"상태: {parts[0]}, 모드: {parts[1]}, 값: {parts[2]}, 단위: {parts[3]}")
-                        weight = float(parts[2])  # 값에서 무게만 추출
-                        total_weight += weight
-                        count += 1
-                except UnicodeDecodeError:
-                    print(f"디코딩 오류: {data.hex()}")
-                    raise CustomException("디코딩 오류", status_code=404)
+                data = ser.readline().decode('ascii', errors='ignore').strip()  # 데이터를 문자열로 변환하고 공백 제거
+                logger.info(f"수신된 원본 데이터: {data}")
+                # 정규식으로 무게 값 추출
+                match = re.search(WEIGHT_PATTERN, data)
+                if match:
+                    weight_str = match.group(1)  # 정규식 매칭된 첫 번째 그룹
+                    weight = float(weight_str)   # 문자열을 float로 변환
+                    logger.info(f"추출된 무게 값: {weight}")
+                    total_weight += weight
+                    count += 1
+                else:
+                    logger.warning("무게 값을 추출할 수 없습니다.")
 
-        if count == 0:  # 데이터가 없는 경우 예외 처리
-            return 0
+        if count == 0:  # 데이터가 없을 경우 예외 처리
             raise CustomException("무게 데이터를 읽을 수 없습니다.", status_code=404)
 
-        return total_weight / count  # 평균값 반환
+        # 평균값 반환
+        avg_weight = total_weight / count
+        logger.info(f"평균 무게 값: {avg_weight}")
+        return avg_weight
 
     except serial.SerialException as e:
+        logger.error(f"시리얼 통신 오류: {str(e)}")
         raise CustomException(f"시리얼 통신 오류: {str(e)}", status_code=404)
 
     finally:
-        if ser.is_open:
+        if 'ser' in locals() and ser.is_open:
             ser.close()
-            print("직렬 포트를 닫았습니다.")
+            logger.info("직렬 포트를 닫았습니다.")
 
 def update_weight(company, name):
     if company:
         try:
-            # 현재 회사의 상태를 가져옴
+            # 회사의 현재 상태를 가져옴
             cur_state = Weight.objects.get(company=company)
 
             # 로드셀에서 읽어온 무게
@@ -85,16 +83,18 @@ def update_weight(company, name):
             cur_state.weight = company_disposal
             cur_state.save()
 
-            # Message와 폐기량 반환
+            # 폐기량 메시지 반환
             message = f"{name}님의 폐기량은 {disposal_weight:.2f}kg입니다."
+            logger.info(f"{name}님의 폐기량 업데이트: {disposal_weight:.2f}kg")
             return {'message': message, 'disposal_weight': disposal_weight, 'company_weight': company_disposal}
 
         except Weight.DoesNotExist:
+            logger.error(f"회사 {company}의 무게 데이터가 존재하지 않습니다.")
             raise CustomException("무게 데이터가 존재하지 않습니다.", status_code=404)
-        # except CustomException as ce:
-        #     raise CustomException("무게 데이터를 읽을 수 없습니다.", status_code=404)
         except Exception as e:
+            logger.error(f"서버 오류 발생: {str(e)}")
             raise CustomException("서버 오류 발생", status_code=500)
 
     else:
+        logger.warning("회사명이 입력되지 않았습니다.")
         return {'error': "회사명이 입력되지 않았습니다.", 'status': 400}

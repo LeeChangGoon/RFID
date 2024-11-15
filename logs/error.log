@@ -741,3 +741,5 @@ ERROR 2024-11-27 06:40:38,023 log Internal Server Error: /result/
 ERROR 2024-11-27 06:40:38,023 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1865
 ERROR 2024-11-27 07:41:31,302 log Internal Server Error: /result/
 ERROR 2024-11-27 07:41:31,303 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-15 04:50:21,296 log Internal Server Error: /disposal/
+ERROR 2024-11-15 04:50:21,296 basehttp "POST /disposal/ HTTP/1.1" 500 1852
