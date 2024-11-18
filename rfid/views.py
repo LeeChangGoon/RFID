@@ -12,27 +12,20 @@ from gpiozero import Button
 from gpiozero import DigitalOutputDevice
 # Create your views here.
 import spidev
-import RPi.GPIO as GPIO
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 spi = spidev.SpiDev()
 spi.open(0, 0)
 spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 
-def index(request):
-    return render(request, 'index.html')
-
-#led
-led_blue = DigitalOutputDevice(21, active_high=True)
+#잠금장치
+lock = DigitalOutputDevice(21, active_high=True)
 
 # 메인 페이지
 def index(request):
-    led_blue.off()
+    lock.off()
+    DigitalOutputDevice(16).off()
     return render(request, 'index.html')
-
-#잠금장치 관리 클래스
-
-
 
 #사용자 관리 클래스
 class User_Control:
@@ -40,12 +33,12 @@ class User_Control:
     def read_tag(request):
         try:
             reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
-            id, data = reader.read() # RFID 태그 읽기
-            user = User_Control.check_user(id)  # UID로 사용자 확인
+            uid, data = reader.read() # RFID 태그 읽기
+            user = User_Control.check_user(uid)  # UID로 사용자 확인
             if user:
                 # 확인된 사용자의 이름을 포함한 메시지
                 message = f"사용자 {user.name}이(가) 확인되었습니다."
-                led_blue.on() # gpio 핀 high/low 테스트용
+                lock.on()
                 return render(request, 'disposal.html', {# disposal.html에 사용자 정보와 폐기량 정보 전달
                     'message': message,
                     'user': user,
@@ -86,7 +79,8 @@ class User_Control:
                         if not Weight.objects.filter(company=company).exists():
                             Weight.objects.create(company=company, weight=0)
                     # 저장 후 메인 페이지로 리디렉션
-                    return redirect(reverse('index'))
+                    return render(request, 'index.html', {'success_addUser': True}) #success: 모달 띄우기 위한 플래그
+                
                 except Exception as e:
                     # 오류 발생 시 에러 페이지로 이동
                     return render(request, 'error.html', {'message': f"Error saving data: {e}"})
@@ -101,7 +95,8 @@ class User_Control:
             return user
         except User.DoesNotExist:
             return None
-    #카드 추가 페이지 렌더링
+        
+    #카드 추가 페이지
     def add_card(request):
         return render(request, 'add_user.html')   
      
@@ -139,22 +134,33 @@ class Paint_Control:
         if request.method == 'GET':
             name = request.GET.get('name')
             company = request.GET.get('company')
-            weight_info = Paint_Control.update_weight(company, name)
-
-            if 'error' in weight_info:
-                # 오류 메시지와 상태 코드를 반환
-                return render(request, 'error.html', {'message' : weight_info})
+            Tagging=Paint_Control.lockTag(name, company)
+            if Tagging:
+                weight_info = Paint_Control.update_weight(company, name)
+                if 'error' in weight_info:
+                    # 오류 메시지와 상태 코드를 반환
+                    return render(request, 'error.html', {'message' : weight_info})
             # 성공적으로 폐기량을 계산한 경우
-            else: 
-                return render(request, 'result.html', {
-                'name': name,
-                'company': company,
-                'message': weight_info['message'],
-                'Weight': weight_info['disposal_weight'],
-                'Company_Weight' : weight_info['company_weight']
-            })
+                else: 
+                    return render(request, 'result.html', {
+                    'name': name,
+                    'company': company,
+                    'message': weight_info['message'],
+                    'Weight': weight_info['disposal_weight'],
+                    'Company_Weight' : weight_info['company_weight']
+                })
+            else:
+                return render(request, 'error.html', {'message': 'Invalid input data'})
+    
+    # 처음에 댔던 태그랑 맞는지 비교
+    def lockTag(name, company):
+        reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
+        uid, data = reader.read()
+        disposal_User = User_Control.check_user(uid)
+        if(disposal_User.name == name and disposal_User.company == company):
+            return True
         else:
-            return render(request, 'error.html', {'message': 'Invalid input data'})
+            return False
 
 # MQTT 테이블 정보 전송 (테스트용)
 def publish_weight(request):

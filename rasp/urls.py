@@ -26,6 +26,6 @@ urlpatterns = [
     path('add_card/', views.User_Control.add_card),
 #path('disposal/', views.Paint_Control.disposal, name='disposal'),
     path('result/', views.Paint_Control.result),
-    path('send_weight/', views.publish_weight)
+    path('send_weight/', views.publish_weight),
 ]
 
