@@ -27,6 +27,22 @@ def index(request):
     DigitalOutputDevice(16).off()
     return render(request, 'index.html')
 
+#처음 댔던 카드를 대도록 하는 함수
+def disposal_err_return(request):
+    message = "올바른 카드를 인식해주세요."
+    name = request.GET.get('name')
+    company = request.GET.get('company')
+    uid = request.GET.get('uid')
+    user = User_Control.check_user(uid)  # UID로 사용자 확인
+
+    return render(request, 'disposal.html', {
+                'message': message,
+                'user': user,
+                'uid': uid,
+                'company': company
+    })
+
+
 #사용자 관리 클래스
 class User_Control:
 # RFID 태그 읽기 및 사용자 확인
@@ -42,6 +58,7 @@ class User_Control:
                 return render(request, 'disposal.html', {# disposal.html에 사용자 정보와 폐기량 정보 전달
                     'message': message,
                     'user': user,
+                    'uid': uid
                 })
             else:
                 # 사용자가 확인되지 않은 경우
@@ -129,38 +146,49 @@ class Paint_Control:
         else:
             return {'error': "회사명이 입력되지 않았습니다.", 'status': 400}
 
-    # 폐기 후 결과 화면
+    # 폐기 후 결과 화면 보여주기
     def result(request):
         if request.method == 'GET':
             name = request.GET.get('name')
             company = request.GET.get('company')
-            Tagging=Paint_Control.lockTag(name, company)
-            if Tagging:
+            uid = request.GET.get('uid')
+           
+            tagging_result = Paint_Control.lockTag(name, company)
+
+            if tagging_result['result']:  # 태그 확인 성공
                 weight_info = Paint_Control.update_weight(company, name)
                 if 'error' in weight_info:
                     # 오류 메시지와 상태 코드를 반환
-                    return render(request, 'error.html', {'message' : weight_info})
-            # 성공적으로 폐기량을 계산한 경우
-                else: 
+                    return render(request, 'error.html', {'message': weight_info})
+                else:
+                    # 성공적으로 폐기량을 계산한 경우
                     return render(request, 'result.html', {
-                    'name': name,
+                        'name': name,
+                        'company': company,
+                        'message': weight_info['message'],
+                        'Weight': weight_info['disposal_weight'],
+                        'Company_Weight': weight_info['company_weight'],
+                    })
+            else:  # 태그 확인 실패
+                return render(request, 'err_lock.html', {
+                    'message': '초기에 읽은 카드와 맞지 않습니다.',
                     'company': company,
-                    'message': weight_info['message'],
-                    'Weight': weight_info['disposal_weight'],
-                    'Company_Weight' : weight_info['company_weight']
+                    'name': name,
+                    'uid': uid
                 })
-            else:
-                return render(request, 'error.html', {'message': 'Invalid input data'})
-    
+
     # 처음에 댔던 태그랑 맞는지 비교
     def lockTag(name, company):
-        reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
-        uid, data = reader.read()
-        disposal_User = User_Control.check_user(uid)
-        if(disposal_User.name == name and disposal_User.company == company):
-            return True
-        else:
-            return False
+        reader = SimpleMFRC522(reset_pin=16)  # RFID 리더기 초기화
+        try:
+            uid, data = reader.read()
+            disposal_User = User_Control.check_user(uid)
+            if disposal_User.name == name and disposal_User.company == company:
+                return {'result': True, 'uid': uid}
+            else:
+                return {'result': False, 'uid': uid}
+        except Exception as e:
+            return {'error': f"오류가 발생했습니다: {str(e)}", 'status': 500}
 
 # MQTT 테이블 정보 전송 (테스트용)
 def publish_weight(request):

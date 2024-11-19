@@ -36,6 +36,18 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        button {
+            background-color: #006633; /* 초록색 */
+            color: #ffffff; /* 흰색 글씨 */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #004d26; /* 진한 초록색 */
+        }
     </style>
 </head>
 
@@ -43,7 +55,12 @@
     <div class="container">
         <h1>오류가 발생했습니다</h1>
         <p>{{ message }}</p>
-        <a href="/">홈으로 돌아가기</a>
+        <form action="/disposal_err_return/" method="GET">
+            <input type="hidden" name="uid" value="{{ uid }}">
+            <input type="hidden" name="name" value="{{ name }}">
+            <input type="hidden" name="company" value="{{ company }}">
+            <button type="submit">이전 화면으로</button>
+        </form>
     </div>
 </body>
 </html>
