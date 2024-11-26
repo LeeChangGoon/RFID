@@ -18,12 +18,11 @@ spi = spidev.SpiDev()
 spi.open(0, 0)
 spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 
-#잠금장치
-lock = DigitalOutputDevice(21, active_high=True)
+#잠금장치 ---> on이 열림 / off가 잠김
+lock = DigitalOutputDevice(21, active_high=False)
 
 # 메인 페이지
 def index(request):
-    lock.off()
     DigitalOutputDevice(16).off()
     return render(request, 'index.html')
 
@@ -64,6 +63,8 @@ class User_Control:
                 # 사용자가 확인되지 않은 경우
                 message = f"인가된 사용자가 아닙니다. UID: {id}"
                 return render(request, 'error.html', {'message': '해당 사용자가 없습니다.'})
+        except GPIOPinInUse:
+            return render(request, 'error.html', {'message': "GPIO핀 리소스 정리 필요"})
         except Exception as e:
             # 오류 발생 시 에러 페이지로 이동
             print(e)
@@ -97,7 +98,10 @@ class User_Control:
                             Weight.objects.create(company=company, weight=0)
                     # 저장 후 메인 페이지로 리디렉션
                     return render(request, 'index.html', {'success_addUser': True}) #success: 모달 띄우기 위한 플래그
-                
+
+                except GPIOPinInUse:
+                    return render(request, 'error.html', {'message': "GPIO핀 리소스 정리 필요"})
+
                 except Exception as e:
                     # 오류 발생 시 에러 페이지로 이동
                     return render(request, 'error.html', {'message': f"Error saving data: {e}"})
@@ -156,6 +160,7 @@ class Paint_Control:
             tagging_result = Paint_Control.lockTag(name, company)
 
             if tagging_result['result']:  # 태그 확인 성공
+                lock.off()
                 weight_info = Paint_Control.update_weight(company, name)
                 if 'error' in weight_info:
                     # 오류 메시지와 상태 코드를 반환
