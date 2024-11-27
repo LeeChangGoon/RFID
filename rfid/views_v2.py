@@ -26,14 +26,12 @@ logger = logging.getLogger('rasp')
 logger.info("로깅 시작")
 
 #잠금장치 ---> on이 열림 / off가 잠김
-# lock = DigitalOutputDevice(21, active_high=False)
-
-
+lock = DigitalOutputDevice(21, active_high=True)
 
 # 잠금장치 해제 후 메인 화면 렌더링
 @handle_exception
 def index(request):
-    lock.off()  # 잠금 장치 닫기
+    lock.on()  # 잠금 장치 닫기
     return render(request, 'index.html')
 
 # 카드 추가 페이지 렌더링
@@ -48,12 +46,19 @@ def disposal(request):
     if not uid:
         raise CustomException("RFID 태그를 읽을 수 없습니다.", status_code=400)
     
-    user = user_management.check_user(uid)
+    # 세션에 UID 저장
+    request.session['uid'] = uid
+    uid_session = request.session.get('uid')
+    if not uid_session:
+        raise CustomException("세션에 UID가 없습니다. 작업을 다시 시작하세요.", status_code=400)
+    user = user_management.check_user(uid_session)
     if not user:
         raise CustomException("사용자를 찾을 수 없습니다.", status_code=404)
     
     message = f"사용자 {user.name}이(가) 확인되었습니다."
-    return render(request, 'disposal.html', {'message': message, 'user': user, 'uid': uid})
+    lock.on()
+    return render(request, 'disposal.html', {'message': message, 'user': user, 'uid': uid_session})
+
 
 # 폐기 결과 화면 렌더링
 @handle_exception
@@ -63,19 +68,32 @@ def result(request):
     
     name = request.GET.get('name')
     company = request.GET.get('company')
-    uid = request.GET.get('uid')
-    
-    weight_info = weight.update_weight(company, name)
-    
-    tag_uid = rfid_reader.tagging()
+    # uid = request.GET.get('uid')
+
+    uid = request.session.get('uid')
+    if not uid:
+        raise CustomException("세션에 UID가 없습니다. 작업을 다시 시작하세요.", status_code=400)
+
+    try:
+        tag_uid = rfid_reader.tagging()  # RFID 태깅 시도
+    except CustomException as e:
+        if e.status_code == 404:  # 시간 초과 예외
+            logger.warning("RFID 태깅 시간 초과 예외 발생")
+            raise CustomException("태그 읽기가 너무 오래 걸렸습니다. 카드를 다시 태깅해주세요.", status_code=556)
+
+    # 태그된 UID와 세션에 저장된 UID가 일치하지 않으면 예외 발생
     if str(tag_uid) != str(uid):
-        return render(request, 'err_lock.html', {
-        'uid': uid,
-        'name': name,
-        'company': company,
-        'message': weight_info['message'],
-    })
-    
+        # CustomException에 딕셔너리 전달
+        raise CustomException(
+            "올바른 카드 태깅", 
+            status_code=555, 
+            extra_data={'uid': uid, 'name': name, 'company': company, 'message': "올바른 카드 태깅"}
+        )
+    weight_info = weight.update_weight(company, name)  
+    # 작업 완료 후 세션 정리
+    del request.session['uid']
+    lock.off()  # 잠금 장치 닫기
+
     return render(request, 'result.html', {
         'name': name,
         'company': company,
@@ -83,3 +101,13 @@ def result(request):
         'Weight': weight_info['disposal_weight'],
         'Company_Weight': weight_info['company_weight'],
     })
+
+@handle_exception
+def disposal_err(request):
+    if request.method != 'GET':
+        raise CustomException("잘못된 요청입니다.", status_code=400)
+    message = "다시 태깅해주세요."
+    uid = request.session.get('uid')
+    user = user_management.check_user(uid)
+
+    return render(request, 'disposal.html', {'message': message, 'user': user, 'uid': uid})

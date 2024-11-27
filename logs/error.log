@@ -681,3 +681,63 @@ ERROR 2024-11-27 02:03:03,484 log Internal Server Error: /disposal/
 ERROR 2024-11-27 02:03:03,485 basehttp "POST /disposal/ HTTP/1.1" 500 1852
 ERROR 2024-11-27 02:03:08,589 log Internal Server Error: /disposal/
 ERROR 2024-11-27 02:03:08,589 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 02:35:58,323 log Internal Server Error: /result/
+ERROR 2024-11-27 02:35:58,366 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 02:43:08,458 log Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/utils.py", line 14, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 90, in result
+    extra_data={'uid': uid, 'name': name, 'company': company, 'message': weight_info['message']}
+                                                                         ~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'message'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/utils.py", line 29, in wrapper
+    logger.error(f"예기치 못한 오류: {e}", exc_info=True)
+    ^^^^^^
+NameError: name 'logger' is not defined
+ERROR 2024-11-27 02:43:08,461 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 145
+ERROR 2024-11-27 02:44:35,857 log Internal Server Error: /result/
+ERROR 2024-11-27 02:44:35,857 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 02:58:52,664 log Internal Server Error: /result/
+ERROR 2024-11-27 02:58:52,664 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 04:35:20,941 log Internal Server Error: /result/
+ERROR 2024-11-27 04:35:20,942 basehttp "GET /result/?uid=None&name=&company= HTTP/1.1" 500 1852
+ERROR 2024-11-27 05:57:47,515 log Internal Server Error: /result/
+ERROR 2024-11-27 05:57:47,558 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 05:57:56,696 log Internal Server Error: /disposal/
+ERROR 2024-11-27 05:57:56,696 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:28:19,974 log Internal Server Error: /disposal/
+ERROR 2024-11-27 06:28:20,039 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:28:22,073 log Internal Server Error: /disposal/
+ERROR 2024-11-27 06:28:22,073 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:28:26,999 log Internal Server Error: /disposal/
+ERROR 2024-11-27 06:28:27,000 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:28:35,597 log Internal Server Error: /result/
+ERROR 2024-11-27 06:28:35,597 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:28:39,664 log Internal Server Error: /result/
+ERROR 2024-11-27 06:28:39,664 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:29:06,581 log Internal Server Error: /result/
+ERROR 2024-11-27 06:29:06,582 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:29:32,724 log Internal Server Error: /result/
+ERROR 2024-11-27 06:29:32,725 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:34:57,815 log Internal Server Error: /result/
+ERROR 2024-11-27 06:34:57,815 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-27 06:38:27,466 log Internal Server Error: /result/
+ERROR 2024-11-27 06:38:27,467 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1865
+ERROR 2024-11-27 06:38:38,734 log Internal Server Error: /result/
+ERROR 2024-11-27 06:38:38,735 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1865
+ERROR 2024-11-27 06:40:38,023 log Internal Server Error: /result/
+ERROR 2024-11-27 06:40:38,023 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1865
+ERROR 2024-11-27 07:41:31,302 log Internal Server Error: /result/
+ERROR 2024-11-27 07:41:31,303 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852

@@ -20,7 +20,7 @@ spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 
 
 #잠금장치 ---> on이 열림 / off가 잠김
-lock = DigitalOutputDevice(21, active_high=False)
+# lock = DigitalOutputDevice(21, active_high=False)
 
 # 메인 페이지
 def index(request):
@@ -226,4 +226,3 @@ def publish_weight(request):
     print("데이터 발행:", message)
 
     return render(request, 'index.html')
-

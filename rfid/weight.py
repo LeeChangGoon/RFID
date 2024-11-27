@@ -56,6 +56,7 @@ def get_weight():  # 측정값 5개 받고 평균내서 리턴
                     raise CustomException("디코딩 오류", status_code=404)
 
         if count == 0:  # 데이터가 없는 경우 예외 처리
+            return 0
             raise CustomException("무게 데이터를 읽을 수 없습니다.", status_code=404)
 
         return total_weight / count  # 평균값 반환
@@ -89,10 +90,11 @@ def update_weight(company, name):
             return {'message': message, 'disposal_weight': disposal_weight, 'company_weight': company_disposal}
 
         except Weight.DoesNotExist:
-            return {'error': "무게 정보가 없습니다.", 'status': 404}
-        except CustomException as ce:
-            return {'error': ce.message, 'status': ce.status_code}
+            raise CustomException("무게 데이터가 존재하지 않습니다.", status_code=404)
+        # except CustomException as ce:
+        #     raise CustomException("무게 데이터를 읽을 수 없습니다.", status_code=404)
         except Exception as e:
-            return {'error': f"오류가 발생했습니다: {str(e)}", 'status': 500}
+            raise CustomException("서버 오류 발생", status_code=500)
+
     else:
         return {'error': "회사명이 입력되지 않았습니다.", 'status': 400}

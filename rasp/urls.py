@@ -33,7 +33,7 @@ urlpatterns = [
     path('disposal/', views_v2.disposal),
     path('add_card/', views_v2.add_card),
     path('user_add/', user_management.add_user),
-    path('result/', views_v2.result)
-
+    path('result/', views_v2.result),
+    path('disposal_err/', views_v2.disposal_err)
 ]
 
