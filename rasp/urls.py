@@ -17,15 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import ( handler400, handler403, handler404, handler500)
-from rfid import views
+from rfid import user_management, views, views_v2
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('disposal/', views.User_Control.read_tag, name='read_tag'),
-    path('disposal_err_return/', views.disposal_err_return, name='read_tag'),
-    path('add_user/', views.User_Control.add_user),
-    path('add_card/', views.User_Control.add_card),
-    path('result/', views.Paint_Control.result),
-    path('send_weight/', views.publish_weight),
+    # path('disposal/', views.disposal, name='read_tag'),
+    # path('disposal/', views.User_Control.read_tag, name='read_tag'),
+    # path('disposal_err_return/', views.disposal_err_return),
+    # path('add_user/', views.User_Control.add_user),
+    # path('add_card/', views.User_Control.add_card),
+    # path('result/', views.Paint_Control.result),
+    # path('send_weight/', views.publish_weight),
+
+
+    path('disposal/', views_v2.disposal),
+    path('add_card/', views_v2.add_card),
+    path('user_add/', user_management.add_user),
+    path('result/', views_v2.result)
+
 ]
 

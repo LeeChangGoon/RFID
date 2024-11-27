@@ -36,12 +36,37 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            width: 80%;
+            max-width: 300px;
+        }
+        .modal-content h2 {
+            color: #006f3c;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>오류가 발생했습니다</h1>
         <p>{{ message }}</p>
+        <p>{{ status_code }}</p>
         <a href="/">홈으로 돌아가기</a>
     </div>
 </body>

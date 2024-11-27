@@ -34,21 +34,32 @@
         form {
             margin-top: 20px;
         }
+        #confirmationMessage {
+            font-size: 16px;
+            color: #006633;
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>{{ message }}</h1>
     {% if user %}
         <p>사용자 이름: {{ user.name }}</p>
-            <p>소속 회사: {{ user.company }}</p>
+        <p>소속 회사: {{ user.company }}</p>
     {% endif %}
-    <form action="/result/" method="GET">
+    <form action="/result/" method="GET" onsubmit="handleButtonClick(event)">
         <input type="hidden" name="uid" value="{{ uid }}">
         <input type="hidden" name="name" value="{{ user.name }}">
         <input type="hidden" name="company" value="{{ user.company }}">
-        <button type="submit">폐기 완료</button>
+        <button type="submit" id="readTagButton">폐기 완료</button>
+        <p id="confirmationMessage">10초 안에 태깅해주세요...</p>
     </form>
-    
-    <!-- 추가적인 기능: 폐기량 입력 등 -->
+    <script>
+        function handleButtonClick(event) {
+            // 버튼 숨기고 안내 문구 표시
+            document.getElementById('readTagButton').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

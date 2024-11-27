@@ -17,6 +17,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'rfid/templates') #템플릿파일 경로
 
+# Custom Exception Handlers
+HANDLER404 = 'rfid.views_v2.custom_exception_handler'
+HANDLER500 = 'rfid.views_v2.custom_exception_handler'
+HANDLER401 = 'rfid.views_v2.custom_exception_handler'
+HANDLER400 = 'rfid.views_v2.custom_exception_handler'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -24,9 +29,10 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'rfid/templates') #템플릿파일 경로
 SECRET_KEY = 'django-insecure-2l$r1=pr99hu^(#d12)gqe^ts52ed0c%zleuy=a#32cnllw3(7'
 ADMIN_PASSWD = 'qwer123'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'raspberrypi.local', '10.150.8.165']  # 예시
+
 
 LOGGING = {
     'version': 1,
@@ -45,30 +51,23 @@ LOGGING = {
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'error.log'),
-            'formatter': 'verbose',
-        },
-        'warning_file': {
-            'level': 'WARNING',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'WARNING.log'),
+            'filename': os.path.join(BASE_DIR, 'logs/error.log'),
             'formatter': 'verbose',
         },
         'console': {
-            'level': 'DEBUG',
+            'level': 'WARNING',
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
         },
     },
     'loggers': {
-        'myapp': {
-            'handlers': ['error_file', 'warning_file', 'console'],
-            'level': 'DEBUG',  # 로그 레벨을 DEBUG로 설정하여 모든 로그 출력
-            'propagate': False
+        'django': {
+            'handlers': ['console', 'error_file'],
+            'level': 'WARNING',
+            'propagate': True,
         },
     },
 }
-
 
 
 #APPEND_SLASH = False
@@ -93,6 +92,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'rfid.middleware.CustomExceptionMiddleware',  # CustomException 처리 미들웨어 추가
 ]
 
 ROOT_URLCONF = 'rasp.urls'
@@ -100,9 +100,7 @@ ROOT_URLCONF = 'rasp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            '/home/pi/rasp/rfid/templates',  # 여기에 템플릿 경로 추가
-        ],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

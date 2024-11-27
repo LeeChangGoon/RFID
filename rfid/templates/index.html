@@ -93,23 +93,28 @@
         .modal-content h2 {
             color: #006f3c;
         }
+        #confirmationMessage {
+            font-size: 16px;
+            color: #006633;
+            display: none;
+        }
     </style>
     </style>
 </head>
-
-
 
 
 <body>
 
     <div class="container">
         <h1>RFID 페인트 폐기 시스템</h1>
-        <form action="/disposal/" method="GET" onsubmit="hideButton()">
+        <form action="/disposal/" method="POST" onsubmit="handleButtonClick(event)">
             <button type="submit" id="readTagButton">태그 읽기</button>
+            <p id="confirmationMessage">10초 안에 태깅해주세요...</p>
         </form>
         <script>
-            function hideButton() {
+            function handleButtonClick(event) {
                 document.getElementById('readTagButton').style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
             }
         </script>
 

@@ -5,12 +5,10 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 import gpiozero
 from mfrc522 import SimpleMFRC522
-
 from rasp import settings
+from rfid.exceptions import CustomException
 from .models import User, Weight
-from gpiozero import Button
 from gpiozero import DigitalOutputDevice
-# Create your views here.
 import spidev
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
@@ -18,13 +16,29 @@ spi = spidev.SpiDev()
 spi.open(0, 0)
 spi.max_speed_hz = 50000  # SPI 속도를 50kHz로 낮춤
 
+# Create your views here.
+
+
 #잠금장치 ---> on이 열림 / off가 잠김
 lock = DigitalOutputDevice(21, active_high=False)
 
 # 메인 페이지
 def index(request):
-    DigitalOutputDevice(16).off()
+    # DigitalOutputDevice(16).off()
     return render(request, 'index.html')
+
+# #폐기 페이지
+# def disposal(request, state, message, uid, user, company):
+
+#     return render(request, 'disposal.html', {# disposal.html에 사용자 정보와 폐기량 정보 전달
+#                             'message': message,
+#                             'user': user,
+#                             'uid': uid
+#                         })   
+
+
+
+
 
 #처음 댔던 카드를 대도록 하는 함수
 def disposal_err_return(request):
@@ -41,10 +55,9 @@ def disposal_err_return(request):
                 'company': company
     })
 
-
 #사용자 관리 클래스
 class User_Control:
-# RFID 태그 읽기 및 사용자 확인
+    # RFID 태그 읽기 및 사용자 확인
     def read_tag(request):
         try:
             reader = SimpleMFRC522(reset_pin=16)  # RFID리더기 객체 생성, 실제 연결된 gpio핀 번호로 리셋핀 설정
@@ -54,6 +67,7 @@ class User_Control:
                 # 확인된 사용자의 이름을 포함한 메시지
                 message = f"사용자 {user.name}이(가) 확인되었습니다."
                 lock.on()
+                # return disposal(True, "확인", uid, user, user.company)
                 return render(request, 'disposal.html', {# disposal.html에 사용자 정보와 폐기량 정보 전달
                     'message': message,
                     'user': user,
@@ -63,8 +77,8 @@ class User_Control:
                 # 사용자가 확인되지 않은 경우
                 message = f"인가된 사용자가 아닙니다. UID: {id}"
                 return render(request, 'error.html', {'message': '해당 사용자가 없습니다.'})
-        except GPIOPinInUse:
-            return render(request, 'error.html', {'message': "GPIO핀 리소스 정리 필요"})
+        # except GPIOPinInUse:
+        #     return render(request, 'error.html', {'message': "GPIO핀 리소스 정리 필요"})
         except Exception as e:
             # 오류 발생 시 에러 페이지로 이동
             print(e)
@@ -98,9 +112,8 @@ class User_Control:
                             Weight.objects.create(company=company, weight=0)
                     # 저장 후 메인 페이지로 리디렉션
                     return render(request, 'index.html', {'success_addUser': True}) #success: 모달 띄우기 위한 플래그
-
-                except GPIOPinInUse:
-                    return render(request, 'error.html', {'message': "GPIO핀 리소스 정리 필요"})
+                # except GPIOPinInUse:
+                #     return render(request, 'error.html', {'message': "GPIO핀 리소스 정리 필요"})
 
                 except Exception as e:
                     # 오류 발생 시 에러 페이지로 이동
@@ -158,6 +171,9 @@ class Paint_Control:
             uid = request.GET.get('uid')
            
             tagging_result = Paint_Control.lockTag(name, company)
+            # if tagging_result['Timeout']:
+            #     return render(request, 'result.html', {'Timeout': True}) #success: 모달 띄우기 위한 플래그
+
 
             if tagging_result['result']:  # 태그 확인 성공
                 lock.off()
@@ -174,12 +190,12 @@ class Paint_Control:
                         'Weight': weight_info['disposal_weight'],
                         'Company_Weight': weight_info['company_weight'],
                     })
-            else:  # 태그 확인 실패
+            else:
                 return render(request, 'err_lock.html', {
-                    'message': '초기에 읽은 카드와 맞지 않습니다.',
-                    'company': company,
-                    'name': name,
-                    'uid': uid
+                'message': '초기에 읽은 카드와 맞지 않습니다.',
+                'company': company,
+                'name': name,
+                'uid': uid
                 })
 
     # 처음에 댔던 태그랑 맞는지 비교
@@ -187,6 +203,8 @@ class Paint_Control:
         reader = SimpleMFRC522(reset_pin=16)  # RFID 리더기 초기화
         try:
             uid, data = reader.read()
+            if uid == None:
+                return {'Timeout': True}
             disposal_User = User_Control.check_user(uid)
             if disposal_User.name == name and disposal_User.company == company:
                 return {'result': True, 'uid': uid}
@@ -208,3 +226,4 @@ def publish_weight(request):
     print("데이터 발행:", message)
 
     return render(request, 'index.html')
+

@@ -1,0 +1,683 @@
+ERROR 2024-11-26 04:50:54,032 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 04:50:54,035 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 04:50:54,060 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 04:50:54,061 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 04:51:13,942 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 04:51:13,943 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:05:34,557 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 05:05:34,558 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:05:34,581 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:05:34,581 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:05:38,185 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:05:38,186 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:05:48,951 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 05:05:48,954 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:05:48,975 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:05:48,975 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:05:53,138 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:05:53,138 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:06:03,785 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 05:06:03,786 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:06:03,811 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:06:03,812 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:06:48,334 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:06:48,334 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:06:59,025 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 05:06:59,026 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:06:59,052 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:06:59,052 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:07:11,223 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:07:11,224 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:07:22,968 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 05:07:22,969 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:07:22,991 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:07:22,991 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:07:40,821 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:07:40,821 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:08:47,824 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 40, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 54, in disposal
+    raise CustomException("태깅 중 오류 발생", status_code=500)
+rfid.exceptions.CustomException: 태깅 중 오류 발생
+ERROR 2024-11-26 05:08:47,825 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:08:47,845 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:08:47,846 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:09:20,320 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:09:20,320 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:28,387 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:28,387 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:29,405 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view rfid.views_v2.disposal didn't return an HttpResponse object. It returned None instead.
+ERROR 2024-11-26 05:16:29,407 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:29,428 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:29,429 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:30,294 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:30,295 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:31,156 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view rfid.views_v2.disposal didn't return an HttpResponse object. It returned None instead.
+ERROR 2024-11-26 05:16:31,157 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:31,178 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:31,179 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:31,931 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:31,932 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:53,052 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view rfid.views_v2.disposal didn't return an HttpResponse object. It returned None instead.
+ERROR 2024-11-26 05:16:53,053 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:53,076 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:53,077 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:16:55,315 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:16:55,315 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:17:06,416 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 50, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 41, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+ERROR 2024-11-26 05:17:06,417 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:17:06,683 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:17:06,683 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:17:08,614 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:17:08,615 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:17:11,939 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view rfid.views_v2.disposal didn't return an HttpResponse object. It returned None instead.
+ERROR 2024-11-26 05:17:11,940 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:17:11,964 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:17:11,964 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:17:13,965 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:17:13,966 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:19:35,033 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:19:35,033 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:19:37,281 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:19:37,281 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:19:38,042 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:19:38,042 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:21:47,685 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:21:47,685 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:21:50,499 log Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 86, in result
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 75, in result
+    raise CustomException("사용자 확인 실패", status_code=404)
+rfid.exceptions.CustomException: 사용자 확인 실패
+ERROR 2024-11-26 05:21:50,500 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:21:50,523 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:21:50,523 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:21:51,413 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:21:51,413 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:27:34,765 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 50, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 41, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 55, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+ERROR 2024-11-26 05:27:34,767 basehttp "POST /disposal/ HTTP/1.1" 500 131
+ERROR 2024-11-26 05:27:34,800 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:27:34,800 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:27:45,503 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:27:45,503 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:28:58,185 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:28:58,185 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:29:09,224 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 50, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 41, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 55, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+ERROR 2024-11-26 05:29:09,225 basehttp "POST /disposal/ HTTP/1.1" 500 131
+ERROR 2024-11-26 05:29:09,261 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:29:09,261 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:29:13,246 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:29:13,247 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:29:39,607 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:29:39,608 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:29:51,099 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 50, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 41, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 55, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+ERROR 2024-11-26 05:29:51,100 basehttp "POST /disposal/ HTTP/1.1" 500 131
+ERROR 2024-11-26 05:29:51,136 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:29:51,136 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:30:20,044 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:30:20,044 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:30:24,673 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:30:24,673 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:33:12,143 log Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 86, in result
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 75, in result
+    raise CustomException("사용자 확인 실패", status_code=404)
+rfid.exceptions.CustomException: 사용자 확인 실패
+ERROR 2024-11-26 05:33:12,145 basehttp "GET /result/?uid=596393001371&name=%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9C%A0%EC%A0%80&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 131
+ERROR 2024-11-26 05:33:12,182 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:33:12,183 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:33:18,963 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:33:18,963 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:33:22,485 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:33:22,485 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:33:23,516 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:33:23,517 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:33:24,204 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:33:24,205 basehttp "GET /favicon.ico HTTP/1.1" 500 131
+ERROR 2024-11-26 05:42:04,703 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 51, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 42, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 56, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+ERROR 2024-11-26 05:42:04,705 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:42:04,729 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:42:04,729 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:42:06,412 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:42:06,412 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:42:13,112 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:42:13,112 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:42:17,031 log Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 87, in result
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 76, in result
+    raise CustomException("사용자 확인 실패", status_code=404)
+rfid.exceptions.CustomException: 사용자 확인 실패
+ERROR 2024-11-26 05:42:17,032 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:42:17,054 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:42:17,054 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:42:19,012 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:42:19,012 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:46:10,371 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 51, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 42, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 56, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+ERROR 2024-11-26 05:46:10,373 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:46:10,399 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:46:10,400 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:46:11,330 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:46:11,330 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:49:02,143 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 51, in disposal
+    raise e
+  File "/home/pi/rasp/rfid/views_v2.py", line 42, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 56, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^
+UnboundLocalError: cannot access local variable 'user' where it is not associated with a value
+ERROR 2024-11-26 05:49:02,145 basehttp "POST /disposal/ HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:49:02,435 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:49:02,436 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 05:49:03,677 log Internal Server Error: /favicon.ico
+ERROR 2024-11-26 05:49:03,677 basehttp "GET /favicon.ico HTTP/1.1" 500 1860
+ERROR 2024-11-26 07:45:04,253 exception Invalid HTTP_HOST header: '10.150.8.165:8000'. You may need to add '10.150.8.165' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.8.165:8000'. You may need to add '10.150.8.165' to ALLOWED_HOSTS.
+ERROR 2024-11-26 07:50:52,255 exception Invalid HTTP_HOST header: '10.150.8.165:8000'. You may need to add '10.150.8.165' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.8.165:8000'. You may need to add '10.150.8.165' to ALLOWED_HOSTS.
+ERROR 2024-11-26 07:50:56,326 exception Invalid HTTP_HOST header: '10.150.8.165:8000'. You may need to add '10.150.8.165' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '10.150.8.165:8000'. You may need to add '10.150.8.165' to ALLOWED_HOSTS.
+ERROR 2024-11-26 22:42:16,163 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 34, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 66, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/rfid_reader.py", line 44, in tagging
+    raise CustomException("태깅 시간 초과", status_code=404)
+rfid.exceptions.CustomException: 태깅 시간 초과
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 38, in wrapper
+    return render(request, 'errors/error.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: errors/error.html
+ERROR 2024-11-26 22:42:16,167 basehttp "POST /disposal/ HTTP/1.1" 500 145
+ERROR 2024-11-26 22:56:45,105 log Internal Server Error: /result/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 34, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 91, in result
+    raise CustomException("열림 시에 이용한 카드와 동일한 카드를 대주세요", status_code=777)
+rfid.exceptions.CustomException: 열림 시에 이용한 카드와 동일한 카드를 대주세요
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 38, in wrapper
+    return render(request, 'error.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/shortcuts.py", line 26, in render
+    return HttpResponse(content, content_type, status)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/http/response.py", line 374, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/django/http/response.py", line 139, in __init__
+    raise ValueError("HTTP status code must be an integer from 100 to 599.")
+ValueError: HTTP status code must be an integer from 100 to 599.
+ERROR 2024-11-26 22:56:45,150 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 145
+ERROR 2024-11-26 22:57:21,883 log Unknown Status Code: /result/
+ERROR 2024-11-26 22:57:21,884 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 555 1875
+ERROR 2024-11-26 23:45:01,155 log Internal Server Error: /user_add/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/user_management.py", line 39, in add_user
+    raise CustomException("이미 등록된 사용자입니다.", status_code=409)
+rfid.exceptions.CustomException: 이미 등록된 사용자입니다.
+ERROR 2024-11-26 23:45:01,156 basehttp "POST /user_add/ HTTP/1.1" 500 145
+ERROR 2024-11-27 00:01:31,882 log Internal Server Error: /disposal/
+ERROR 2024-11-27 00:01:31,883 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 00:01:33,585 log Internal Server Error: /disposal/
+ERROR 2024-11-27 00:01:33,585 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 00:01:53,933 log Internal Server Error: /disposal/
+ERROR 2024-11-27 00:01:53,934 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 00:02:13,279 log Internal Server Error: /disposal/
+ERROR 2024-11-27 00:02:13,279 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 00:02:55,441 log Internal Server Error: /disposal/
+Traceback (most recent call last):
+  File "/home/pi/rasp/rfid/views_v2.py", line 34, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 65, in disposal
+    uid = rfid_reader.tagging()
+          ^^^^^^^^^^^^^^^^^^^^^
+TypeError: handle_exception.<locals>.wrapper() missing 1 required positional argument: 'request'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/rasp/rfid/views_v2.py", line 45, in wrapper
+    return render(request, 'errors/error.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: errors/error.html
+ERROR 2024-11-27 00:02:55,442 basehttp "POST /disposal/ HTTP/1.1" 500 145
+ERROR 2024-11-27 00:03:09,708 log Internal Server Error: /disposal/
+ERROR 2024-11-27 00:03:09,708 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 02:02:57,452 log Internal Server Error: /disposal/
+ERROR 2024-11-27 02:02:57,453 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 02:03:03,484 log Internal Server Error: /disposal/
+ERROR 2024-11-27 02:03:03,485 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-27 02:03:08,589 log Internal Server Error: /disposal/
+ERROR 2024-11-27 02:03:08,589 basehttp "POST /disposal/ HTTP/1.1" 500 1852
