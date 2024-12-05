@@ -14,7 +14,7 @@ class User(models.Model):
 # 회사별 무게 테이블
 class Weight(models.Model): 
     company = models.CharField(max_length=255)
-    weight = models.IntegerField()
+    weight = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return f"{self.company}: {self.weight}kg" # weight_instance = Weight(company="abc", weight=123) print(weight_instance) ---> abc: 123kg 형식으로 출력되게 만들어줌

@@ -1,0 +1,409 @@
+WARNING 2024-12-04 09:06:30,906 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-04 09:06:31,006 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-04 09:06:31,007 utils wrapper CustomException 발생: 태깅 시간 초과 (Status Code: 404)
+WARNING 2024-12-04 09:06:43,972 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-04 09:06:44,072 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-04 09:06:44,072 utils wrapper CustomException 발생: 태깅 시간 초과 (Status Code: 404)
+WARNING 2024-12-04 09:07:13,991 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-04 09:07:14,091 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-04 09:07:14,091 utils wrapper CustomException 발생: 태깅 시간 초과 (Status Code: 404)
+WARNING 2024-12-05 08:05:43,951 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 08:05:44,054 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 08:05:44,055 views_v2 result RFID 태깅 시간 초과 예외 발생
+WARNING 2024-12-05 08:06:15,990 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 08:06:16,091 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 08:06:16,091 views_v2 result RFID 태깅 시간 초과 예외 발생
+WARNING 2024-12-05 08:06:48,295 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 08:06:48,395 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 08:06:48,395 views_v2 result RFID 태깅 시간 초과 예외 발생
+WARNING 2024-12-05 08:07:05,806 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 08:07:05,907 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 08:07:05,907 views_v2 result RFID 태깅 시간 초과 예외 발생
+WARNING 2024-12-05 08:12:35,199 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 08:12:35,300 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 08:12:35,300 views_v2 result RFID 태깅 시간 초과 예외 발생
+WARNING 2024-12-05 08:21:25,841 user_management check_user 사용자를 찾을 수 없음: UID None
+WARNING 2024-12-05 08:21:25,841 utils wrapper CustomException 발생: UID None에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 08:21:26,808 views_v2 result 세션에 UID가 없습니다.
+WARNING 2024-12-05 08:21:26,808 utils wrapper CustomException 발생: 세션에 UID가 없습니다. 작업을 다시 시작하세요. (Status Code: 400)
+WARNING 2024-12-05 08:21:41,628 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 08:21:41,728 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 08:21:41,728 utils wrapper CustomException 발생: 태깅 시간 초과 (Status Code: 404)
+WARNING 2024-12-05 11:34:27,169 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 11:34:27,269 rfid_reader tagging Timeout: UID not detected
+WARNING 2024-12-05 11:34:27,270 views_v2 result RFID 태깅 시간 초과 예외 발생
+WARNING 2024-12-05 11:34:39,032 views_v2 result 태그된 UID가 세션 UID와 일치하지 않습니다. 세션 UID: 04 49 3C 6A 76 13 91, 태그된 UID: 584187460857
+WARNING 2024-12-05 11:35:33,483 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:35:34,484 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:35:35,485 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:35:36,487 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:35:37,488 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 11:35:37,489 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 11:35:37,489 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+WARNING 2024-12-05 11:35:51,256 views_v2 result 태그된 UID가 세션 UID와 일치하지 않습니다. 세션 UID: 04 49 3C 6A 76 13 91, 태그된 UID: 73 24 9E E2
+WARNING 2024-12-05 11:36:08,470 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:36:09,471 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:36:10,473 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:36:11,474 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:36:12,476 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 11:36:12,476 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 11:36:12,476 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+WARNING 2024-12-05 11:43:29,832 user_management check_user 사용자를 찾을 수 없음: UID 2D 9B 8E FB
+WARNING 2024-12-05 11:43:29,833 utils wrapper CustomException 발생: UID 2D 9B 8E FB에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 11:43:29,838 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 11:43:42,318 user_management check_user 사용자를 찾을 수 없음: UID 2D 9B 8E FB
+WARNING 2024-12-05 11:43:42,318 utils wrapper CustomException 발생: UID 2D 9B 8E FB에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 11:43:42,319 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 11:44:24,879 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:44:25,880 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:44:26,882 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:44:27,883 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 11:44:28,884 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 11:44:28,885 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 11:44:28,885 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+WARNING 2024-12-05 11:45:21,127 user_management check_user 사용자를 찾을 수 없음: UID 07 62 D7 63
+WARNING 2024-12-05 11:45:21,128 utils wrapper CustomException 발생: UID 07 62 D7 63에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 11:45:21,128 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:04:37,943 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:04:38,944 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:04:39,946 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:04:40,947 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:04:41,949 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 13:04:41,949 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 13:04:41,949 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+WARNING 2024-12-05 13:16:04,096 user_management check_user 사용자를 찾을 수 없음: UID 07 62 D7 63
+WARNING 2024-12-05 13:16:04,096 utils wrapper CustomException 발생: UID 07 62 D7 63에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 13:16:04,096 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:22:14,064 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:22:14,072 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 61, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:22:20,507 views_v2 result 태그된 UID가 세션 UID와 일치하지 않습니다. 세션 UID: 04 49 3C 6A 76 13 91, 태그된 UID: None
+WARNING 2024-12-05 13:22:25,478 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:22:26,479 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:22:27,481 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:22:28,482 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:22:29,483 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 13:22:29,483 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 13:22:29,483 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+ERROR 2024-12-05 13:37:46,109 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:37:46,113 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 61, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:38:18,433 views_v2 result 태그된 UID가 세션 UID와 일치하지 않습니다. 세션 UID: 04 49 3C 6A 76 13 91, 태그된 UID: 07 62 D7 63
+WARNING 2024-12-05 13:38:27,821 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:38:28,823 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:38:29,824 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:38:30,826 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:38:31,827 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 13:38:31,828 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 13:38:31,828 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+WARNING 2024-12-05 13:41:12,096 user_management check_user 사용자를 찾을 수 없음: UID 07 62 D7 63
+WARNING 2024-12-05 13:41:12,096 utils wrapper CustomException 발생: UID 07 62 D7 63에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 13:41:12,099 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:41:18,415 user_management check_user 사용자를 찾을 수 없음: UID 07 62 D7 63
+WARNING 2024-12-05 13:41:18,416 utils wrapper CustomException 발생: UID 07 62 D7 63에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 13:41:18,416 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:41:33,120 user_management check_user 사용자를 찾을 수 없음: UID 07 62 D7 63
+WARNING 2024-12-05 13:41:33,120 utils wrapper CustomException 발생: UID 07 62 D7 63에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 13:41:33,125 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:41:37,945 user_management check_user 사용자를 찾을 수 없음: UID 07 62 D7 63
+WARNING 2024-12-05 13:41:37,946 utils wrapper CustomException 발생: UID 07 62 D7 63에 해당하는 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 13:41:37,946 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+WARNING 2024-12-05 13:42:35,665 rfid_reader tagging UID not detected, retrying...
+ERROR 2024-12-05 13:42:35,765 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 13:42:35,765 user_management add_user 사용자 추가 오류: 태깅 시간 초과 (Status Code: 404)
+WARNING 2024-12-05 13:42:35,765 utils wrapper CustomException 발생: 사용자 추가 중 오류 발생: 태깅 시간 초과 (Status Code: 404) (Status Code: 500)
+WARNING 2024-12-05 13:46:34,498 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:46:35,500 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:46:36,501 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:46:37,503 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:46:38,505 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 13:46:38,505 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 13:46:38,505 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+ERROR 2024-12-05 13:48:48,636 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:48:48,642 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:49:18,151 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:49:18,160 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:50:50,784 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:50:50,788 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:50:58,417 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:50:58,418 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:51:18,999 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:52:50,079 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+WARNING 2024-12-05 13:53:05,103 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:53:06,104 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:53:07,105 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:53:08,107 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 13:53:09,108 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 13:53:09,108 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 13:53:09,108 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+ERROR 2024-12-05 14:02:06,639 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 14:03:28,385 utils wrapper 예기치 못한 오류: 'Manager' object has no attribute 'get_object_or_404'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get_object_or_404(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Manager' object has no attribute 'get_object_or_404'
+ERROR 2024-12-05 14:05:27,571 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:05:27,572 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 14:07:58,611 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:07:58,611 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 14:08:36,531 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:08:36,532 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 14:08:37,784 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:08:37,784 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 14:12:18,576 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:12:18,577 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+WARNING 2024-12-05 14:12:28,809 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 14:12:29,810 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 14:12:30,811 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 14:12:31,813 weight get_weight 무게 값을 추출할 수 없습니다.
+WARNING 2024-12-05 14:12:32,813 weight get_weight 무게 값을 추출할 수 없습니다.
+ERROR 2024-12-05 14:12:32,814 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+WARNING 2024-12-05 14:12:32,814 utils wrapper CustomException 발생: 서버 오류 발생 (Status Code: 500)
+ERROR 2024-12-05 14:12:47,017 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:12:47,017 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+ERROR 2024-12-05 14:13:47,263 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+WARNING 2024-12-05 14:13:47,263 utils wrapper CustomException 발생: 사용자를 찾을 수 없습니다. (Status Code: 404)
+WARNING 2024-12-05 14:13:55,143 views_v2 result 태그된 UID가 세션 UID와 일치하지 않습니다. 세션 UID: 07 62 D7 63, 태그된 UID: None

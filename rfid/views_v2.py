@@ -18,12 +18,10 @@ import spidev
 import paho.mqtt.client as mqtt
 import paho.mqtt.publish as publish
 from django.shortcuts import render
-spi = spidev.SpiDev()
-spi.open(0, 0)
-spi.max_speed_hz = 1000000
 # 로깅 설정
 logger = logging.getLogger('rasp')
 logger.info("로깅 시작")
+logger.setLevel(logging.INFO)
 
 #잠금장치 ---> on이 열림 / off가 잠김
 lock = DigitalOutputDevice(21, active_high=True)
@@ -32,6 +30,9 @@ lock = DigitalOutputDevice(21, active_high=True)
 @handle_exception
 def index(request):
     lock.on()  # 잠금 장치 닫기
+    if 'uid' in request.session:
+        del request.session['uid']
+        logger.info("세션 UID 삭제 완료")
     return render(request, 'index.html')
 
 # 카드 추가 페이지 렌더링
@@ -42,8 +43,9 @@ def add_card(request):
 # 폐기 중 화면 렌더링
 @handle_exception
 def disposal(request):
-    uid = rfid_reader.tagging()
+    uid = rfid_reader.read_card_uid()
     if not uid:
+        logger.warning("RFID 태그를 읽을 수 없습니다.")
         raise CustomException("RFID 태그를 읽을 수 없습니다.", status_code=400)
     
     # 세션에 UID 저장
@@ -51,10 +53,8 @@ def disposal(request):
     uid_session = request.session.get('uid')
     if not uid_session:
         raise CustomException("세션에 UID가 없습니다. 작업을 다시 시작하세요.", status_code=400)
-    user = user_management.check_user(uid_session)
-    if not user:
-        raise CustomException("사용자를 찾을 수 없습니다.", status_code=404)
     
+    user = user_management.check_user(uid_session)
     message = f"사용자 {user.name}이(가) 확인되었습니다."
     lock.on()
     return render(request, 'disposal.html', {'message': message, 'user': user, 'uid': uid_session})
@@ -72,10 +72,11 @@ def result(request):
 
     uid = request.session.get('uid')
     if not uid:
+        logger.error("세션에 UID가 없습니다.")
         raise CustomException("세션에 UID가 없습니다. 작업을 다시 시작하세요.", status_code=400)
 
     try:
-        tag_uid = rfid_reader.tagging()  # RFID 태깅 시도
+        tag_uid = rfid_reader.read_card_uid()  # RFID 태깅 시도
     except CustomException as e:
         if e.status_code == 404:  # 시간 초과 예외
             logger.warning("RFID 태깅 시간 초과 예외 발생")
@@ -84,6 +85,7 @@ def result(request):
     # 태그된 UID와 세션에 저장된 UID가 일치하지 않으면 예외 발생
     if str(tag_uid) != str(uid):
         # CustomException에 딕셔너리 전달
+        logger.warning(f"태그된 UID가 세션 UID와 일치하지 않습니다. 세션 UID: {uid}, 태그된 UID: {tag_uid}")
         raise CustomException(
             "올바른 카드 태깅", 
             status_code=555, 
@@ -111,3 +113,9 @@ def disposal_err(request):
     user = user_management.check_user(uid)
 
     return render(request, 'disposal.html', {'message': message, 'user': user, 'uid': uid})
+
+def clear_uid_session(request):
+    """세션에서 UID 제거 (존재 여부 확인)"""
+    if 'uid' in request.session:
+        del request.session['uid']
+        logger.info("세션 UID 삭제 완료")

@@ -43,7 +43,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {message}',
+            'format': '{levelname} {asctime} {module} {funcName} {message}',
             'style': '{',
         },
         'simple': {
@@ -55,23 +55,31 @@ LOGGING = {
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/error.log'),
+            'filename': '/home/pi/Desktop/rasp_v3/logs/error.log',
             'formatter': 'verbose',
         },
-        'console': {
-            'level': 'WARNING',
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
+        'info_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/home/pi/Desktop/rasp_v3/logs/info.log',
+            'formatter': 'verbose',
         },
+        'warning_file': {
+        'level': 'WARNING',
+        'class': 'logging.FileHandler',
+        'filename': '/home/pi/Desktop/rasp_v3/logs/warning.log',
+        'formatter': 'verbose',
+    },
     },
     'loggers': {
-        'django': {
-            'handlers': ['console', 'error_file'],
-            'level': 'WARNING',
-            'propagate': True,
+        'rasp': {
+            'handlers': ['info_file', 'error_file', 'warning_file'],
+            'level': 'INFO',
+            'propagate': False,
         },
     },
 }
+
 
 
 #APPEND_SLASH = False
@@ -162,7 +170,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 

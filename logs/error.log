@@ -743,3 +743,371 @@ ERROR 2024-11-27 07:41:31,302 log Internal Server Error: /result/
 ERROR 2024-11-27 07:41:31,303 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=HD%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
 ERROR 2024-11-15 04:50:21,296 log Internal Server Error: /disposal/
 ERROR 2024-11-15 04:50:21,296 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-15 12:08:35,686 log Internal Server Error: /result/
+ERROR 2024-11-15 12:08:35,687 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:13:01,862 log Internal Server Error: /result/
+ERROR 2024-11-15 12:13:01,862 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:13:42,942 log Internal Server Error: /result/
+ERROR 2024-11-15 12:13:42,942 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:13:52,457 log Internal Server Error: /result/
+ERROR 2024-11-15 12:13:52,457 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:14:10,183 log Internal Server Error: /result/
+ERROR 2024-11-15 12:14:10,183 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:15:40,431 log Internal Server Error: /result/
+ERROR 2024-11-15 12:15:40,431 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:16:38,921 log Internal Server Error: /result/
+ERROR 2024-11-15 12:16:38,921 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:16:44,263 log Internal Server Error: /result/
+ERROR 2024-11-15 12:16:44,263 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:16:51,690 log Internal Server Error: /result/
+ERROR 2024-11-15 12:16:51,690 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:21:16,246 log Internal Server Error: /result/
+ERROR 2024-11-15 12:21:16,246 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:23:35,096 log Internal Server Error: /result/
+ERROR 2024-11-15 12:23:35,096 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:24:36,380 log Internal Server Error: /result/
+ERROR 2024-11-15 12:24:36,381 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:27:30,144 log Internal Server Error: /result/
+ERROR 2024-11-15 12:27:30,144 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:27:47,045 log Internal Server Error: /result/
+ERROR 2024-11-15 12:27:47,045 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:28:07,566 log Internal Server Error: /result/
+ERROR 2024-11-15 12:28:07,566 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:28:20,799 log Internal Server Error: /result/
+ERROR 2024-11-15 12:28:20,800 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:28:52,766 log Internal Server Error: /result/
+ERROR 2024-11-15 12:28:52,767 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:43:55,957 log Internal Server Error: /result/
+ERROR 2024-11-15 12:43:55,958 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1852
+ERROR 2024-11-15 12:44:27,359 log Internal Server Error: /result/
+ERROR 2024-11-15 12:44:27,360 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:48:00,595 log Internal Server Error: /result/
+ERROR 2024-11-15 12:48:00,596 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:48:45,902 log Internal Server Error: /result/
+ERROR 2024-11-15 12:48:45,903 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:49:06,868 log Internal Server Error: /result/
+ERROR 2024-11-15 12:49:06,868 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:51:10,287 log Internal Server Error: /result/
+ERROR 2024-11-15 12:51:10,288 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:51:37,729 log Internal Server Error: /result/
+ERROR 2024-11-15 12:51:37,730 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:52:07,134 log Internal Server Error: /result/
+ERROR 2024-11-15 12:52:07,134 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:52:18,331 log Internal Server Error: /result/
+ERROR 2024-11-15 12:52:18,332 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 12:52:31,566 log Internal Server Error: /result/
+ERROR 2024-11-15 12:52:31,567 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 13:33:58,582 log Internal Server Error: /result/
+ERROR 2024-11-15 13:33:58,582 basehttp "GET /result/?uid=195883367363&name=%EC%9D%B4%EC%B0%BD%ED%99%98&company=hd%ED%98%84%EB%8C%80%EB%AF%B8%ED%8F%AC HTTP/1.1" 500 1848
+ERROR 2024-11-15 16:09:51,356 log Internal Server Error: /disposal/
+ERROR 2024-11-15 16:09:51,359 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-15 16:09:57,382 log Internal Server Error: /disposal/
+ERROR 2024-11-15 16:09:57,383 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-15 16:10:32,234 log Internal Server Error: /disposal/
+ERROR 2024-11-15 16:10:32,234 basehttp "POST /disposal/ HTTP/1.1" 500 1852
+ERROR 2024-11-15 16:18:05,614 log Internal Server Error: /user_add/
+ERROR 2024-11-15 16:18:05,615 basehttp "POST /user_add/ HTTP/1.1" 500 1903
+ERROR 2024-11-15 16:25:36,224 log Internal Server Error: /user_add/
+ERROR 2024-11-15 16:25:36,225 basehttp "POST /user_add/ HTTP/1.1" 500 1903
+ERROR 2024-12-04 09:06:31,006 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-04 09:06:44,072 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-04 09:07:14,091 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 08:05:44,054 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 08:06:16,091 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 08:06:48,395 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 08:07:05,907 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 08:12:35,300 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 08:21:26,808 views_v2 result 세션에 UID가 없습니다.
+ERROR 2024-12-05 08:21:41,728 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 11:34:27,269 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 11:35:37,489 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 11:36:12,476 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 11:43:29,838 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 11:43:42,319 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 11:44:28,885 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 11:45:21,128 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:04:41,949 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 13:16:04,096 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 58, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:22:14,064 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:22:14,072 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 61, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:22:29,483 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 13:37:46,109 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:37:46,113 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 61, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:38:31,828 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 13:41:12,099 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:41:18,416 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:41:33,125 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:41:37,946 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:42:35,765 rfid_reader tagging Timeout: UID not detected
+ERROR 2024-12-05 13:42:35,765 user_management add_user 사용자 추가 오류: 태깅 시간 초과 (Status Code: 404)
+ERROR 2024-12-05 13:46:38,505 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 13:48:48,636 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:48:48,642 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:49:18,151 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:49:18,160 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:50:50,784 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:50:50,788 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:50:58,417 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 25, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:50:58,418 utils wrapper 예기치 못한 오류: 'HttpResponse' object has no attribute 'name'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 62, in disposal
+    message = f"사용자 {user.name}이(가) 확인되었습니다."
+                     ^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'name'
+ERROR 2024-12-05 13:51:18,999 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:52:50,079 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 13:53:09,108 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 14:02:06,639 utils wrapper 예기치 못한 오류: User matching query does not exist.
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+rfid.models.User.DoesNotExist: User matching query does not exist.
+ERROR 2024-12-05 14:03:28,385 utils wrapper 예기치 못한 오류: 'Manager' object has no attribute 'get_object_or_404'
+Traceback (most recent call last):
+  File "/home/pi/Desktop/rasp_v3/rfid/utils.py", line 16, in wrapper
+    return func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/views_v2.py", line 57, in disposal
+    user = user_management.check_user(uid_session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pi/Desktop/rasp_v3/rfid/user_management.py", line 24, in check_user
+    user = User.objects.get_object_or_404(uid=uid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Manager' object has no attribute 'get_object_or_404'
+ERROR 2024-12-05 14:05:27,571 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+ERROR 2024-12-05 14:07:58,611 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+ERROR 2024-12-05 14:08:36,531 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+ERROR 2024-12-05 14:08:37,784 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+ERROR 2024-12-05 14:12:18,576 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+ERROR 2024-12-05 14:12:32,814 weight update_weight 서버 오류 발생: 유효한 데이터가 수신되지 않았습니다. (Status Code: 404)
+ERROR 2024-12-05 14:12:47,017 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90
+ERROR 2024-12-05 14:13:47,263 user_management check_user 사용자를 찾을 수 없음: UID 04 E3 43 6A 76 13 90

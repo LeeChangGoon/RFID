@@ -47,6 +47,7 @@ def handle_exception(func):
                 'status_code': e.status_code,
             }, status=e.status_code)
         except Exception as e:
+            print(e)
             logger.error(f"예기치 못한 오류: {e}", exc_info=True)
             return render(request, 'error.html', {
                 'message': "내부 서버 오류가 발생했습니다.",

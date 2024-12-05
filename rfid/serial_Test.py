@@ -18,6 +18,7 @@ try:
         timeout=TIMEOUT,
         rtscts=False, xonxoff=False
     )
+    
     print("CI-400와의 통신 시작!")
 
     while True:
